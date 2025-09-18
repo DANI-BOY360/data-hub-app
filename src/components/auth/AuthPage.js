@@ -15,6 +15,7 @@ import {
 import { useAuth } from "../../context/AuthContext";
 import { supabase } from "../../services/supabase";
 import "../../styles/AuthPage.css";
+import logo from "../../assets/logo.jpg";
 
 const AuthPage = () => {
   const { signUp, signIn, user } = useAuth();
@@ -370,9 +371,13 @@ const AuthPage = () => {
         {/* Header */}
         <div className="auth-header">
           <div className="brand-logo">
-            <Database size={32} />
+            <img
+              src={logo}
+              alt="Emapok Logo"
+              style={{ width: "75px", height: "75px" }}
+            />
           </div>
-          <h1 className="brand-title">Emapok Data Hub</h1>
+          <h1 className="brand-title">Emapok</h1>
           <p className="brand-subtitle">Your trusted data bundle partner</p>
         </div>
 

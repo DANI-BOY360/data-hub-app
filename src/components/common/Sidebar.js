@@ -12,6 +12,7 @@ import {
   X,
 } from "lucide-react";
 import "../../styles/Sidebar.css";
+import logo from "../../assets/logo.jpg";
 
 const Sidebar = ({ isOpen, onClose, onPageChange, onSignOut }) => {
   const services = [
@@ -72,9 +73,14 @@ const Sidebar = ({ isOpen, onClose, onPageChange, onSignOut }) => {
           <div className="sidebar-header">
             <div className="sidebar-brand">
               <div className="sidebar-logo">
-                <Database size={20} />
+                <img
+                  src={logo}
+                  alt="Emapok Logo"
+                  style={{ width: "75px", height: "75px" }}
+                />
               </div>
-              <span className="sidebar-title">Emapok Data Hub</span>
+
+              <span className="sidebar-title">Emapok </span>
             </div>
             <button onClick={onClose} className="close-button">
               <X size={20} />

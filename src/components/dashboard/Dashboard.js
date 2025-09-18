@@ -5,15 +5,13 @@ import {
   Users,
   DollarSign,
   Menu,
-  Bell,
-  ChevronDown,
   Wallet,
 } from "lucide-react";
 import "../../styles/Dashboard.css";
 
-const Dashboard = ({ onMenuClick }) => {
-  const [user, setUser] = useState({ name: "Kobe" });
-  const [balance, setBalance] = useState(0.0);
+const Dashboard = ({ onMenuClick, userData, walletBalance, onPageChange }) => {
+  const user = userData || { name: "Kobe" };
+  const balance = walletBalance || 0.0;
   const [greeting, setGreeting] = useState("");
   const [stats, setStats] = useState({
     totalSales: 0.0,
@@ -53,7 +51,7 @@ const Dashboard = ({ onMenuClick }) => {
   }, []);
 
   const handleLoadWallet = () => {
-    alert("Load Wallet clicked - will implement payment integration later");
+    onPageChange("topup");
   };
 
   return (
@@ -70,15 +68,6 @@ const Dashboard = ({ onMenuClick }) => {
             <span className="breadcrumb-current">Dashboard</span>
           </div>
         </div>
-
-        <div className="header-right">
-          <Bell size={24} className="notification-icon" />
-          <div className="user-info">
-            <div className="user-avatar"></div>
-            <span className="user-name">{user.name}</span>
-            <ChevronDown size={16} />
-          </div>
-        </div>
       </header>
 
       {/* Main Content */}
@@ -87,7 +76,6 @@ const Dashboard = ({ onMenuClick }) => {
         <div className="date-selector">
           <div className="date-selector-button">
             <span className="date-selector-text">Today</span>
-            <ChevronDown size={16} />
           </div>
         </div>
 

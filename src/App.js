@@ -97,6 +97,7 @@ function AppContent() {
             onMenuClick={() => setSidebarOpen(true)}
             userData={user}
             walletBalance={userWallet}
+            onPageChange={handlePageChange}
           />
         );
     }
