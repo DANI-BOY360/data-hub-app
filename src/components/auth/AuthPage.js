@@ -13,7 +13,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
-import { supabase } from "../../services/supabase"; // Assuming you have Supabase client setup
+import { supabase } from "../../services/supabase";
 import "../../styles/AuthPage.css";
 
 const AuthPage = () => {
@@ -69,7 +69,6 @@ const AuthPage = () => {
     fetchUserProfile();
   }, [user]);
 
-  // Function to create/update user profile in database
   const createUserProfile = async (userId, userData) => {
     try {
       const profileData = {
@@ -77,8 +76,6 @@ const AuthPage = () => {
         username: userData.name.toLowerCase().replace(/\s+/g, ""), // Create username from name
         full_name: userData.name,
         email: userData.email,
-        // phone field doesn't exist in your schema, so we'll skip it
-        // created_at and updated_at are handled by database defaults/triggers
       };
 
       const { data, error } = await supabase

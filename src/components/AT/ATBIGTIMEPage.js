@@ -388,12 +388,9 @@ const ATBigTimePage = ({ onBack, userWallet = 0 }) => {
           <div className="info-content">
             <h4>Secure Transaction</h4>
             <ul>
-              <li>Amount will be deducted from your wallet immediately</li>
               <li>Transaction ID will be provided for reference</li>
-              <li>BigTime bundles are delivered instantly</li>
               <li>Valid for AirtelTigo Ghana networks only</li>
               <li>Contact support with transaction ID for any issues</li>
-              <li>Refunds processed only for failed deliveries</li>
             </ul>
           </div>
         </div>

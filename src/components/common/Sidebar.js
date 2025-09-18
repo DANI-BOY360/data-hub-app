@@ -44,19 +44,12 @@ const Sidebar = ({ isOpen, onClose, onPageChange, onSignOut }) => {
 
   const handleSignOut = async () => {
     try {
-      // Show confirmation dialog
-      const confirmed = window.confirm(
-        "Are you sure you want to sign out? You'll need to log in again to access your account."
-      );
+      // Close sidebar first
+      onClose();
 
-      if (confirmed) {
-        // Close sidebar first
-        onClose();
-
-        // Call the sign out function passed from parent
-        if (onSignOut) {
-          await onSignOut();
-        }
+      // Call the sign out function passed from parent
+      if (onSignOut) {
+        await onSignOut();
       }
     } catch (error) {
       console.error("Sign out error:", error);

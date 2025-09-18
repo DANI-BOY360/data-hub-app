@@ -4,6 +4,7 @@ import Sidebar from "./components/common/Sidebar";
 import MTNPage from "./components/MTN/MTNPage";
 import TelecelPage from "./components/Telecel/TELECELPage";
 import ATBigTimePage from "./components/AT/ATBIGTIMEPage";
+import TopUp from "./components/TopUP/TopUP";
 import OrderHistoryPage from "./components/Order/OrderHistoryPage";
 import AuthPage from "./components/auth/AuthPage";
 import { AuthProvider, useAuth } from "./context/AuthContext";
@@ -66,6 +67,14 @@ function AppContent() {
       case "at-bigtime":
         return (
           <ATBigTimePage
+            onBack={() => setCurrentPage("dashboard")}
+            userWallet={userWallet}
+            onBalanceUpdate={setUserWallet}
+          />
+        );
+      case "topup":
+        return (
+          <TopUp
             onBack={() => setCurrentPage("dashboard")}
             userWallet={userWallet}
             onBalanceUpdate={setUserWallet}
